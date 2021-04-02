@@ -1,9 +1,11 @@
 class WorkoutsController < ApplicationController
+  before_action :set_session
   before_action :set_workout, only: [:show, :update, :destroy]
+  
 
   # GET /workouts
   def index
-    @workouts = Workout.all
+    @workouts = @session.workouts
 
     render json: @workouts
   end
@@ -15,7 +17,7 @@ class WorkoutsController < ApplicationController
 
   # POST /workouts
   def create
-    @workout = Workout.new(workout_params)
+    @workout = @session.workouts.new(workout_params)
 
     if @workout.save
       render json: @workout, status: :created, location: @workout
@@ -25,13 +27,13 @@ class WorkoutsController < ApplicationController
   end
 
   # PATCH/PUT /workouts/1
-  def update
-    if @workout.update(workout_params)
-      render json: @workout
-    else
-      render json: @workout.errors, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   if @workout.update(workout_params)
+  #     render json: @workout
+  #   else
+  #     render json: @workout.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # DELETE /workouts/1
   def destroy
@@ -43,6 +45,9 @@ class WorkoutsController < ApplicationController
     def set_workout
       @workout = Workout.find(params[:id])
     end
+
+    def set_session
+      @session = Session.find(params[:session_id])
 
     # Only allow a list of trusted parameters through.
     def workout_params

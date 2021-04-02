@@ -25,13 +25,13 @@ class InspirationsController < ApplicationController
   end
 
   # PATCH/PUT /inspirations/1
-  def update
-    if @inspiration.update(inspiration_params)
-      render json: @inspiration
-    else
-      render json: @inspiration.errors, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   if @inspiration.update(inspiration_params)
+  #     render json: @inspiration
+  #   else
+  #     render json: @inspiration.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # DELETE /inspirations/1
   def destroy

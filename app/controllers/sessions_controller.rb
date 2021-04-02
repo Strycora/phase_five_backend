@@ -25,13 +25,13 @@ class SessionsController < ApplicationController
   end
 
   # PATCH/PUT /sessions/1
-  def update
-    if @session.update(session_params)
-      render json: @session
-    else
-      render json: @session.errors, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   if @session.update(session_params)
+  #     render json: @session
+  #   else
+  #     render json: @session.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # DELETE /sessions/1
   def destroy
