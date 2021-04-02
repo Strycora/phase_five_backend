@@ -25,13 +25,13 @@ class BestsController < ApplicationController
   end
 
   # PATCH/PUT /bests/1
-  def update
-    if @best.update(best_params)
-      render json: @best
-    else
-      render json: @best.errors, status: :unprocessable_entity
-    end
-  end
+  # def update
+  #   if @best.update(best_params)
+  #     render json: @best
+  #   else
+  #     render json: @best.errors, status: :unprocessable_entity
+  #   end
+  # end
 
   # DELETE /bests/1
   def destroy
