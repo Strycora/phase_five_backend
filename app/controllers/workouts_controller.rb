@@ -48,6 +48,7 @@ class WorkoutsController < ApplicationController
 
     def set_session
       @session = Session.find(params[:session_id])
+    end
 
     # Only allow a list of trusted parameters through.
     def workout_params
