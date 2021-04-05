@@ -20,7 +20,7 @@ class WorkoutsController < ApplicationController
     @workout = @session.workouts.new(workout_params)
 
     if @workout.save
-      render json: @workout, status: :created, location: @workout
+      render json: @session
     else
       render json: @workout.errors, status: :unprocessable_entity
     end
