@@ -46,6 +46,6 @@ class InspirationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def inspiration_params
-      params.require(:inspiration).permit(:name, :image)
+      params.require(:inspiration).permit(:name, :image, :bio)
     end
 end
