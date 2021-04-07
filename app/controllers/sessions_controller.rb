@@ -24,7 +24,7 @@ class SessionsController < ApplicationController
     end
   end
 
-  # PATCH/PUT /sessions/1
+  # #PATCH/PUT /sessions/1
   # def update
   #   if @session.update(session_params)
   #     render json: @session
@@ -36,6 +36,7 @@ class SessionsController < ApplicationController
   # DELETE /sessions/1
   def destroy
     @session.destroy
+    render json: @session
   end
 
   private

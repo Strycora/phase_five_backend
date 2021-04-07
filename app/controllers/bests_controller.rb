@@ -36,6 +36,7 @@ class BestsController < ApplicationController
   # DELETE /bests/1
   def destroy
     @best.destroy
+    render json: @best
   end
 
   private
