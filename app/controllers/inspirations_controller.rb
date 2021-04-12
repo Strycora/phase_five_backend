@@ -36,6 +36,7 @@ class InspirationsController < ApplicationController
   # DELETE /inspirations/1
   def destroy
     @inspiration.destroy
+    render json: @inspiration
   end
 
   private

@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 2021_04_02_211814) do
 
   create_table "sessions", force: :cascade do |t|
     t.string "name"
-    t.datetime "date"
+    t.date "date"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
